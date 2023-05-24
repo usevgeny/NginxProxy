@@ -1,0 +1,16 @@
+version: "3"
+services:
+  ngnix:
+    restart: always
+    build:
+     dockerfile: Dockerfile
+     context: .
+    ports:
+      - "8383:8383"
+      - "8484:8484"
+  service1:
+    image: service1:latest
+    restart: always
+  service2:
+    image: service2:latest
+    restart: always
